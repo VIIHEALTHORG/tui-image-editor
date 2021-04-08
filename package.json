@@ -1,11 +1,11 @@
 {
-  "name": "tui-image-editor",
+  "name": "@viihealthorg/tui-image-editor",
   "author": "NHN FE Development Lab <dl_javascript@nhn.com>",
   "version": "3.11.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nhn/tui.image-editor.git"
+    "url": "https://github.com/viihealthorg/react-image-editor.git"
   },
   "main": "dist/tui-image-editor.js",
   "files": [
@@ -92,5 +92,8 @@
     "fabric": "4.2.0",
     "tui-code-snippet": "^1.5.0",
     "tui-color-picker": "^2.2.6"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
