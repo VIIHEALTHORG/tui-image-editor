@@ -64,10 +64,11 @@ const backstoreOnly = {
  * @param {Object} [option] - Canvas max width & height of css
  *  @param {number} option.cssMaxWidth - Canvas css-max-width
  *  @param {number} option.cssMaxHeight - Canvas css-max-height
+ *  @param {object} option.defaultObjects - Canvas default objects
  * @ignore
  */
 class Graphics {
-  constructor(element, { cssMaxWidth, cssMaxHeight } = {}) {
+  constructor(element, { cssMaxWidth, cssMaxHeight, defaultObjects } = {}) {
     /**
      * Fabric image instance
      * @type {fabric.Image}
@@ -85,6 +86,12 @@ class Graphics {
      * @type {number}
      */
     this.cssMaxHeight = cssMaxHeight || DEFAULT_CSS_MAX_HEIGHT;
+
+    /**
+     * Add default objects on load
+     * @type {object}
+     */
+    this.defaultObjects = defaultObjects || {};
 
     /**
      * cropper Selection Style
@@ -986,6 +993,12 @@ class Graphics {
     this._canvas = new fabric.Canvas(canvasElement, {
       containerClass: 'tui-image-editor-canvas-container',
       enableRetinaScaling: false,
+    });
+
+    this._canvas.loadFromJSON(this.defaultObjects, this._canvas.renderAll.bind(this._canvas));
+
+    this._canvas._objects.forEach((object) => {
+      this._addFabricObject(object);
     });
   }
 

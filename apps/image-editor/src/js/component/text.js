@@ -10,11 +10,13 @@ import { componentNames, eventNames as events, fObjectOptions } from '@/consts';
 
 const defaultStyles = {
   fill: '#000000',
+  bgcolor: 'transparent',
   left: 0,
   top: 0,
 };
 const resetStyles = {
   fill: '#000000',
+  bgcolor: 'transparent',
   fontStyle: 'normal',
   fontWeight: 'normal',
   textAlign: 'left',

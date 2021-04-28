@@ -22,7 +22,7 @@ const command = {
     const prevImage = loader.getCanvasImage();
     const prevImageWidth = prevImage ? prevImage.width : 0;
     const prevImageHeight = prevImage ? prevImage.height : 0;
-    const objects = graphics.removeAll(true).filter((objectItem) => objectItem.type !== 'cropzone');
+    const objects = graphics.getObjects();
 
     objects.forEach((objectItem) => {
       objectItem.evented = true;

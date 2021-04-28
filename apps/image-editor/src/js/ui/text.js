@@ -35,6 +35,12 @@ class Text extends Submenu {
         this.toggleDirection,
         this.usageStatistics
       ),
+      textBgColorpicker: new Colorpicker(
+        this.selector('.tie-text-bg-color'),
+        '',
+        this.toggleDirection,
+        this.usageStatistics
+      ),
       textRange: new Range(
         {
           slider: this.selector('.tie-text-range'),
@@ -55,6 +61,7 @@ class Text extends Submenu {
   destroy() {
     this._removeEvent();
     this._els.textColorpicker.destroy();
+    this._els.textBgColorpicker.destroy();
     this._els.textRange.destroy();
 
     assignmentForDestroy(this);
@@ -79,6 +86,7 @@ class Text extends Submenu {
     this._els.textAlignButton.addEventListener('click', setTextAlign);
     this._els.textRange.on('change', this._changeTextRnageHandler.bind(this));
     this._els.textColorpicker.on('change', this._changeColorHandler.bind(this));
+    this._els.textBgColorpicker.on('change', this._changeBgColorHandler.bind(this));
 
     this.colorPickerInputBox.addEventListener(
       eventNames.FOCUS,
@@ -101,6 +109,7 @@ class Text extends Submenu {
     this._els.textAlignButton.removeEventListener('click', setTextAlign);
     this._els.textRange.off();
     this._els.textColorpicker.off();
+    this._els.textBgColorpicker.off();
 
     this.colorPickerInputBox.removeEventListener(
       eventNames.FOCUS,
@@ -136,6 +145,18 @@ class Text extends Submenu {
    */
   get textColor() {
     return this._els.textColorpicker.color;
+  }
+
+  set textBgColor(color) {
+    this._els.textBgColorpicker.color = color;
+  }
+
+  /**
+   * Get text color
+   * @returns {string} - text color
+   */
+  get textBgColor() {
+    return this._els.textBgColorpicker.color;
   }
 
   /**
@@ -179,9 +200,18 @@ class Text extends Submenu {
   }
 
   setTextStyleStateOnAction(textStyle = {}) {
-    const { fill, fontSize, fontStyle, fontWeight, textDecoration, textAlign } = textStyle;
+    const {
+      fill,
+      fontSize,
+      fontStyle,
+      fontWeight,
+      textDecoration,
+      textAlign,
+      textBgColor,
+    } = textStyle;
 
     this.textColor = fill;
+    this.textBgColor = textBgColor;
     this.fontSize = fontSize;
     this.setEffectState('italic', fontStyle);
     this.setEffectState('bold', fontWeight);
@@ -272,6 +302,18 @@ class Text extends Submenu {
     color = color || 'transparent';
     this.actions.changeTextStyle({
       fill: color,
+    });
+  }
+
+  /**
+   * change background color handler
+   * @param {string} color - change background color string
+   * @private
+   */
+  _changeBgColorHandler(color) {
+    color = color || 'transparent';
+    this.actions.changeTextStyle({
+      textBackgroundColor: color,
     });
   }
 }
