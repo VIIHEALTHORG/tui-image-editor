@@ -8,7 +8,7 @@
   "scripts": {
     "build": "lerna run build",
     "build:image-editor": "lerna run --scope tui-image-editor bundle",
-    "build:react": "lerna run --scope @toast-ui/react-image-editor build",
-    "build:vue": "lerna run --scope @toast-ui/vue-image-editor build"
+    "build:react": "lerna run --scope @viihealthorg/react-image-editor build",
+    "build:vue": "lerna run --scope @viihealthorg/vue-image-editor build"
   }
 }
