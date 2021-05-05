@@ -40,7 +40,7 @@ tui.usageStatistics = false;
 ### Using npm
 
 ```sh
-npm install --save @toast-ui/vue-image-editor
+npm install --save @viihealthorg/vue-image-editor
 ```
 
 > **If you install other packages**, you may lose dependency on fabric. You need to **reinstall the fabric**.
@@ -63,10 +63,10 @@ npm install --save @toast-ui/vue-image-editor
 
   ```js
   // es modules
-  import { ImageEditor } from '@toast-ui/vue-image-editor';
+  import { ImageEditor } from '@viihealthorg/vue-image-editor';
 
   // commonjs require
-  const { ImageEditor } = require('@toast-ui/vue-image-editor');
+  const { ImageEditor } = require('@viihealthorg/vue-image-editor');
   ```
 
 - Using `<script>`
@@ -80,10 +80,10 @@ npm install --save @toast-ui/vue-image-editor
 
 - Using only Vue wrapper component (Single File Component)
 
-  `toastui-vue-image-editor.js` has all of the tui.ImageEditor. If you only need vue wrapper component, you can use `@toast-ui/vue-image-editor/src/ImageEditor.vue` like this:
+  `toastui-vue-image-editor.js` has all of the tui.ImageEditor. If you only need vue wrapper component, you can use `@viihealthorg/vue-image-editor/src/ImageEditor.vue` like this:
 
   ```js
-  import ImageEditor from '@toast-ui/vue-image-editor/src/ImageEditor.vue';
+  import ImageEditor from '@viihealthorg/vue-image-editor/src/ImageEditor.vue';
   ```
 
 ### Implement
@@ -99,7 +99,7 @@ Load ImageEditor component and then add it to the `components` in your component
 ```js
 import 'tui-color-picker/dist/tui-color-picker.css';
 import 'tui-image-editor/dist/tui-image-editor.css';
-import { ImageEditor } from '@toast-ui/vue-image-editor';
+import { ImageEditor } from '@viihealthorg/vue-image-editor';
 
 export default {
   components: {

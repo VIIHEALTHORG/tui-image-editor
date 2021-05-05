@@ -1,5 +1,5 @@
 {
-  "name": "@toast-ui/vue-image-editor",
+  "name": "@viihealthorg/vue-image-editor",
   "version": "3.14.3",
   "description": "TOAST UI Image-Editor for Vue",
   "main": "dist/toastui-vue-image-editor.js",

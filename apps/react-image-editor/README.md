@@ -35,7 +35,7 @@ tui.usageStatistics = false;
 ### Using npm
 
 ```sh
-npm install --save @toast-ui/react-image-editor
+npm install --save @viihealthorg/react-image-editor
 ```
 
 ## 📊 Usage
@@ -48,14 +48,14 @@ You can use Toast UI Image Editor for React as a ECMAScript module or a CommonJS
 
 ```js
 import 'tui-image-editor/dist/tui-image-editor.css';
-import ImageEditor from '@toast-ui/react-image-editor';
+import ImageEditor from '@viihealthorg/react-image-editor';
 ```
 
 - Using CommonJS module
 
 ```js
 require('tui-image-editor/dist/tui-image-editor.css');
-const ImageEditor = require('@toast-ui/react-image-editor');
+const ImageEditor = require('@viihealthorg/react-image-editor');
 ```
 
 ### Props
